@@ -41,17 +41,18 @@ canvas {
 }
 
 .middle {
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0.5);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     user-select: none;
+    padding: 10% 15%;
 }
 
 .time {
-    color: #d99c3b;
+    color: #ffffff;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
