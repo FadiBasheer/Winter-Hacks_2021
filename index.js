@@ -43,6 +43,13 @@ app.get('/register', (req,res) => {
 })
 
 // Login Page
+app.get('/', (req,res) => {
+    res.render('login', {
+
+    })
+})
+
+// Login Page
 app.get('/login', (req,res) => {
     res.render('login', {
 
