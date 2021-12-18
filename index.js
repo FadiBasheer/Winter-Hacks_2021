@@ -13,7 +13,7 @@ const publicDirectory = path.join(__dirname, '/public')
 app.use(express.static(imagesDirectory))
 app.use(express.static(publicDirectory))
 
-//Parse URL-encoded bodies
+// Parse URL-encoded bodies
 app.use(express.urlencoded()); 
 app.use(express.json())
 
@@ -21,34 +21,35 @@ app.set('view engine', 'ejs')
 app.set('views', viewsPath)
 
 
-//Main Page
+// Main Page
 app.get('/main', (req,res) => {
     res.render('main', {
 
     })
 })
 
-//Catalog Page
+// Catalog Page
 app.get('/catalog', (req,res) => {
     res.render('catalog', {
 
     })
 })
 
-//Register Page
+// Register Page
 app.get('/register', (req,res) => {
     res.render('register', {
 
     })
 })
 
-//Upload Page
+// Upload Page
 app.get('/upload', (req,res) => {
     res.render('upload', {
 
     })
 })
 
+// 404 Page
 app.get('/*', (req,res) => {
     res.render('error', {
 
