@@ -40,6 +40,14 @@ app.get('/register', (req,res) => {
     })
 })
 
+
+//Upload Page
+app.get('/upload', (req,res) => {
+    res.render('upload', {
+
+    })
+})
+
 app.post('/users', async (req, res) => {
     const user = new User(req.body)
 
