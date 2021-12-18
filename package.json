@@ -87,5 +87,8 @@
   "bugs": {
     "url": "https://github.com/FadiBasheer/Winter-Hacks_2021/issues"
   },
-  "homepage": "https://github.com/FadiBasheer/Winter-Hacks_2021#readme"
+  "homepage": "https://github.com/FadiBasheer/Winter-Hacks_2021#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }

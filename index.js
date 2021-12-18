@@ -4,7 +4,7 @@ const path = require('path')
 const mongoose = require('mongoose')
 const config = require('config');
 const dbConfig = config.get('BeautifulSoup.dbConfig.db')
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 const viewsPath = path.join(__dirname, './views')
 
 const imagesDirectory = path.join(__dirname, '/images')
@@ -44,5 +44,8 @@ app.get('/*', (req,res) => {
 
     })
 })
+
+
+
 
 app.listen(port, () => console.log('Server is up on port ', port))
