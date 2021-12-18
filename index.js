@@ -33,6 +33,13 @@ app.get('/catalog', (req,res) => {
     })
 })
 
+//Register Page
+app.get('/register', (req,res) => {
+    res.render('register', {
+
+    })
+})
+
 app.post('/users', async (req, res) => {
     const user = new User(req.body)
 

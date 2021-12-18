@@ -1,5 +1,5 @@
 body {
-    background-image: url(../images/christmasBackground.jpg);
+    background-image: url(/christmasBackground.jpg);
     background-size: cover;
 }
 
