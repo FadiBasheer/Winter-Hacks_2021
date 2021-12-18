@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
-const Task = require('./task')
 
 const userSchema = mongoose.Schema({
     name: {
