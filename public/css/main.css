@@ -81,3 +81,24 @@ canvas {
         font-size: 2rem;
     }
 }
+
+.btn {
+    border: none;
+    color: white;
+    overflow: hidden;
+    margin: 1rem;
+    padding: 0;
+    text-transform: uppercase;
+    width: 150px;
+    height: 40px;
+}
+
+.color-1 {
+    background-color: transparent;
+    border: 2px solid #426FC5;
+    color: #426FC5;
+}
+
+.btn-round {
+    border-radius: 10em;
+}
