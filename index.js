@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const path = require('path')
+const User = require('./models/user.js')
 
 require('./db/mongoose.js')
 
@@ -30,6 +31,19 @@ app.get('/catalog', (req,res) => {
     res.render('catalog', {
 
     })
+})
+
+app.post('/users', async (req, res) => {
+    const user = new User(req.body)
+
+    try {
+        await user.save()
+        res.status(201).send({
+            user
+        })
+    } catch (error) {
+        res.status(400).send(error)
+    }
 })
 
 app.get('/*', (req,res) => {
