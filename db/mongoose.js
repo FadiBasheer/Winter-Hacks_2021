@@ -1,6 +1,8 @@
+const config = require('config');
+const dbConfig = config.get('BeautifulSoup.dbConfig.db')
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.DB, {
+mongoose.connect(dbConfig, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
