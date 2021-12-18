@@ -5,7 +5,7 @@ const User = require('./models/user.js')
 
 require('./db/mongoose.js')
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 304
 const viewsPath = path.join(__dirname, './views')
 
 const imagesDirectory = path.join(__dirname, '/images')
@@ -47,6 +47,9 @@ app.get('/upload', (req,res) => {
 
     })
 })
+
+
+
 
 app.post('/users', async (req, res) => {
     const user = new User(req.body)

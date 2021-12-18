@@ -54,6 +54,15 @@ a:hover, a:active { text-decoration: none; color:white }
     border-radius: 20px;
 }
 
+input { 
+    position: absolute;
+    background-color: rgba(209, 209, 209, 0.7);
+    border-radius: 20px;
+    width: 100%;
+    height: 240px;
+}
+
+
 #plus_image {
     position: absolute;
     width: 80px;
