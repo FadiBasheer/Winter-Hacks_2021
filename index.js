@@ -2,21 +2,21 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const User = require('./models/user.js')
-
 require('./db/mongoose.js')
 
 const port = process.env.PORT || 3000
-const viewsPath = path.join(__dirname, './views')
 
+const viewsPath = path.join(__dirname, './views')
 const imagesDirectory = path.join(__dirname, '/images')
 const publicDirectory = path.join(__dirname, '/public')
 
 app.use(express.static(imagesDirectory))
 app.use(express.static(publicDirectory))
 
-app.use(express.urlencoded()); //Parse URL-encoded bodies
-
+//Parse URL-encoded bodies
+app.use(express.urlencoded()); 
 app.use(express.json())
+
 app.set('view engine', 'ejs')
 app.set('views', viewsPath)
 
