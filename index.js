@@ -49,6 +49,13 @@ app.get('/upload', (req,res) => {
     })
 })
 
+app.get('/*', (req,res) => {
+    res.render('error', {
+
+    })
+})
+
+// Create new user, save new user in database
 app.post('/users', async (req, res) => {
     const user = new User(req.body)
 
@@ -61,14 +68,5 @@ app.post('/users', async (req, res) => {
         res.status(400).send(error)
     }
 })
-
-app.get('/*', (req,res) => {
-    res.render('error', {
-
-    })
-})
-
-
-
 
 app.listen(port, () => console.log('Server is up on port ', port))
