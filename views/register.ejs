@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/register.css">
-        <head>
-            <title>WinterHacks2021</title>
-        </head>
-            <body>
-                <form method="post">
-                    <div class="container">
-                        <input type="email" placeholder="Email" name="email" required>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/register.css">
 
-                        <input type="text" placeholder="User Name" name="uName" required>
+<head>
+    <title>WinterHacks2021</title>
+</head>
 
-                        <input type="password" placeholder="Password" name="p" required>
+<body>
+    <form id="myForm" action="/users" method="post">
+        <div class="container">
+            <input type="email" placeholder="Email" name="email" required>
 
-                        <button type="submit", class="register">Register</button>
-                    </div>
-                </form>
-            </body>
+            <input type="text" placeholder="User Name" name="name" required>
+
+            <input type="password" placeholder="Password" name="password" required>
+
+            <button>Register</button>
+        </div>
+    </form>
+    <script src="js/register.js"></script>
+</body>
 
 </html>

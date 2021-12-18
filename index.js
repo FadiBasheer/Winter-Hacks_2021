@@ -14,6 +14,8 @@ const publicDirectory = path.join(__dirname, '/public')
 app.use(express.static(imagesDirectory))
 app.use(express.static(publicDirectory))
 
+app.use(express.urlencoded()); //Parse URL-encoded bodies
+
 app.use(express.json())
 app.set('view engine', 'ejs')
 app.set('views', viewsPath)
