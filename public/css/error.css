@@ -1,3 +1,11 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 .page_404 {
   padding: 40px 0;
   background: #fff;
@@ -12,6 +20,7 @@
   background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
   height: 400px;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .four_zero_four_bg h1 {
@@ -29,6 +38,8 @@
   margin: 20px 0;
   display: inline-block;
 }
+
 .contant_box_404 {
   margin-top: -50px;
 }
+

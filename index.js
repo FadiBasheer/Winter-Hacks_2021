@@ -42,6 +42,13 @@ app.get('/register', (req,res) => {
     })
 })
 
+// Login Page
+app.get('/login', (req,res) => {
+    res.render('login', {
+
+    })
+})
+
 // Upload Page
 app.get('/upload', (req,res) => {
     res.render('upload', {
