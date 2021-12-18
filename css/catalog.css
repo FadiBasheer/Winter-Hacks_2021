@@ -3,12 +3,20 @@ body
     background-image: url(../images/christmasBackground.jpg);
     background-size: cover;
     background-color: white;
+    scroll-behavior: auto;
 }
 img
 {
     max-width: 100%;
     max-height: 100%;
     border-radius: 5px 5px 0 0;
+}
+.grid
+{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 20px;
 }
 .cardCont
 {
@@ -21,10 +29,9 @@ img
     border-radius: 5px;
     background-color: white;
 }
-  
 .card:hover
 {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
 }
 .cardDesc
 {
