@@ -1,0 +1,23 @@
+{
+  "name": "winter-hacks_2021",
+  "version": "1.0.0",
+  "description": "- [Table Of Contents](#table-of-contents)\r   - [Contributors](#contributors)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FadiBasheer/Winter-Hacks_2021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FadiBasheer/Winter-Hacks_2021/issues"
+  },
+  "homepage": "https://github.com/FadiBasheer/Winter-Hacks_2021#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.1.2"
+  }
+}
