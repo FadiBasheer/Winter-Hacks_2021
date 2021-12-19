@@ -1,7 +1,0 @@
-{
-    "BeautifulSoup": {
-        "dbConfig": {
-            "db": "mongodb+srv://toni:op4znLRryDM8okHt@cluster0.ldzkt.mongodb.net/ApplicationDatabase?retryWrites=true&w=majority"
-        }
-    }
-}
