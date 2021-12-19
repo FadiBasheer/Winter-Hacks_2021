@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>This is the catalog page</h1>
+    <!-- <h1>This is the catalog page</h1>
     <div class="cardCont">
         <div class="card">
             <img src="/demoCard.png" alt="card1">
@@ -19,6 +19,18 @@
                 <p>Price: $2.00</p>
             </div>
         </div>
+    </div> -->
+
+
+    <h1>Uploaded Images</h1>
+    <div>
+        <% images.forEach(function(image) { %>
+        <div>
+            <div>
+                <img src="data:image/png; base64, <%=image.card.data.toString('base64')%>">
+            </div>
+        </div>
+        <% }) %>
     </div>
 
     <%- include('partials/footer') -%>

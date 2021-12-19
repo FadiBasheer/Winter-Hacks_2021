@@ -7,19 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/upload.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/common.css">
+
     <title>Upload</title>
 </head>
 
 <body>
+    <script type="text/javascript" src="js/upload.js"></script>
+
     <nav>
         <ul>
             <li id="account"><a href="login.html"><img alt="account" src="/account.gif" width="70" height="70"></a></li>
             <li id="my_cards"><a href="login.html">My Cards</a></li>
             <li id="logout"><a href="login.html">logout</a></li>
         </ul>
-        <nav>
+    </nav>
 
             <div id="containter">
+                <div id="pictures">
+
+                <!-- </div>
                 <div id="yellow_box">
                     <div id="gray_box">
                         <div><input type="file" id="fileInput"></div>
@@ -33,11 +39,23 @@
                     </div>
 
                     <div>
-                        <button id="submit_button">Submit</button>
+                        <button id="submit_button" onclick="sendImage()">Submit</button>
+                    </div> -->
+                    <form action="/upload" method="POST" enctype="multipart/form-data" id="yellow_box">
+                        <div>
+                            <label for="image">Upload Image</label>
+                            <input type="file" id="gray_box" 
+                                   name="card" accept="image/png, image/jpeg">
+                        </div>
+                        <div>
+                            <button type="submit" id = "submit_button">Submit</button>
+                        </div>
+                    </form>
 
-                    </div>
                 </div>
             </div>
+            <%- include('partials/footer') -%>
+
 </body>
 
 </html>

@@ -75,7 +75,7 @@ a:active {
     border-radius: 20px;
 }
 
-input {
+#image {
     position: absolute;
     background-color: rgba(209, 209, 209, 0.7);
     border-radius: 20px;
@@ -123,3 +123,6 @@ input {
     left: 30%;
     top: 70%;
 }
+
+
+
