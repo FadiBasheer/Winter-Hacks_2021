@@ -9,7 +9,7 @@ var mongoose = require('mongoose')
 
 require('./db/mongoose.js')
 
-const port = process.env.PORT || 3004
+const port = process.env.PORT || 3000
 
 const viewsPath = path.join(__dirname, './views')
 const imagesDirectory = path.join(__dirname, '/images')

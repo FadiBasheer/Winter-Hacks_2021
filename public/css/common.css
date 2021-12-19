@@ -4,8 +4,11 @@ footer {
     font-family: "Aleo", sans-serif;
     background-color: beige;
     text-align: center;
-    position: absolute;
-    bottom: 0;
     left: 0;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+
     width: 100%;
 }
