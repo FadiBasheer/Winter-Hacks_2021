@@ -16,16 +16,16 @@
 
     <nav>
         <ul>
-            <li id="account"><a href="login.html"><img alt="account" src="/account.gif" width="70" height="70"></a></li>
-            <li id="my_cards"><a href="login.html">My Cards</a></li>
-            <li id="logout"><a href="login.html">logout</a></li>
+            <li id="account"><a href="#"><img alt="account" src="/account.gif" width="70" height="70"></a></li>
+            <li id="my_cards"><a href="/catalog">More Cards</a></li>
+            <li id="logout"><a href="/logout">logout</a></li>
         </ul>
     </nav>
 
-            <div id="containter">
-                <div id="pictures">
+    <div id="containter">
+        <div id="pictures">
 
-                <!-- </div>
+            <!-- </div>
                 <div id="yellow_box">
                     <div id="gray_box">
                         <div><input type="file" id="fileInput"></div>
@@ -41,26 +41,19 @@
                     <div>
                         <button id="submit_button" onclick="sendImage()">Submit</button>
                     </div> -->
-                    <form action="/upload" method="POST" enctype="multipart/form-data" id="yellow_box">
-                        <div>
-                            <label for="image" id="add_image">click to add image</label>
-                            <input type="file" id="gray_box" 
-                                   name="card" accept="image/png, image/jpeg">
-                        </div>
-                        <div>
-                            <button type="submit" id = "submit_button">Submit</button>
-                        </div>
-                    </form>
-
+            <form action="/upload" method="POST" enctype="multipart/form-data" id="yellow_box">
+                <div>
+                    <label for="image" id="add_image">click to add image</label>
+                    <input type="file" id="gray_box" name="card" accept="image/png, image/jpeg">
                 </div>
-            </div>
-<<<<<<< Updated upstream
-||||||| constructed merge base
-            
-=======
+                <div>
+                    <button type="submit" id="submit_button">Submit</button>
+                </div>
+            </form>
 
->>>>>>> Stashed changes
-            <%- include('partials/footer') -%>
+        </div>
+    </div>
+    <%- include('partials/footer') -%>
 
 </body>
 
