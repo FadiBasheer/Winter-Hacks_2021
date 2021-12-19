@@ -37,6 +37,7 @@
     "finalhandler": "^1.1.2",
     "forwarded": "^0.2.0",
     "fresh": "^0.5.2",
+    "fs": "0.0.1-security",
     "has-flag": "^3.0.0",
     "http-errors": "^1.8.1",
     "iconv-lite": "^0.4.24",
