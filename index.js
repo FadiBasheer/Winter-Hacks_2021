@@ -2,55 +2,75 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const User = require('./models/user.js')
-
 require('./db/mongoose.js')
 
-const port = process.env.PORT || 305
-const viewsPath = path.join(__dirname, './views')
+const port = process.env.PORT || 3000
 
+const viewsPath = path.join(__dirname, './views')
 const imagesDirectory = path.join(__dirname, '/images')
 const publicDirectory = path.join(__dirname, '/public')
 
 app.use(express.static(imagesDirectory))
 app.use(express.static(publicDirectory))
 
+// Parse URL-encoded bodies
+app.use(express.urlencoded()); 
 app.use(express.json())
+
 app.set('view engine', 'ejs')
 app.set('views', viewsPath)
 
 
-//Main Page
+// Main Page
 app.get('/main', (req,res) => {
     res.render('main', {
 
     })
 })
 
-//Catalog Page
+// Catalog Page
 app.get('/catalog', (req,res) => {
     res.render('catalog', {
 
     })
 })
 
-//Register Page
+// Register Page
 app.get('/register', (req,res) => {
     res.render('register', {
 
     })
 })
 
+// Login Page
+app.get('/', (req,res) => {
+    res.render('login', {
 
-//Upload Page
+    })
+})
+
+// Login Page
+app.get('/login', (req,res) => {
+    res.render('login', {
+
+    })
+})
+
+// Upload Page
 app.get('/upload', (req,res) => {
     res.render('upload', {
 
     })
 })
 
+// 404 Page
+app.get('/*', (req,res) => {
+    res.render('error', {
 
+    })
+})
 
-
+// Create new user, save new user in database
 app.post('/users', async (req, res) => {
     const user = new User(req.body)
 
@@ -63,14 +83,5 @@ app.post('/users', async (req, res) => {
         res.status(400).send(error)
     }
 })
-
-app.get('/*', (req,res) => {
-    res.render('error', {
-
-    })
-})
-
-
-
 
 app.listen(port, () => console.log('Server is up on port ', port))

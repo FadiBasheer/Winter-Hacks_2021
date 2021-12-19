@@ -1,7 +1,8 @@
 body {
     background-image: url("/upload.gif");
     background-size: 1980px 1080px;
-}   
+}
+
 nav {
     float: right;
     margin-top: 50px;
@@ -24,11 +25,31 @@ li {
 
 }
 
-a { text-decoration: none; color:white; }
-a:visited { text-decoration: none; color:white; }
-a:hover { text-decoration: none; color:white; }
-a:focus { text-decoration: none; color:white; }
-a:hover, a:active { text-decoration: none; color:white }
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover,
+a:active {
+    text-decoration: none;
+    color: white
+}
 
 
 
@@ -38,7 +59,7 @@ a:hover, a:active { text-decoration: none; color:white }
     height: 550px;
     left: 30%;
     top: 200px;
-    
+
     background: rgba(247, 249, 162, 0.5);
     border-radius: 20px;
 }
@@ -49,12 +70,12 @@ a:hover, a:active { text-decoration: none; color:white }
     height: 240px;
     left: 30%;
     top: 15%;
-    
+
     background: rgba(209, 209, 209, 0.7);
     border-radius: 20px;
 }
 
-input { 
+input {
     position: absolute;
     background-color: rgba(209, 209, 209, 0.7);
     border-radius: 20px;
@@ -77,13 +98,13 @@ input {
     height: 60px;
     left: 17%;
     top: 70%;
-    
+
     font-family: sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
     line-height: 47px;
-    
+
     color: #000000;
 }
 
@@ -100,6 +121,5 @@ input {
     width: 40%;
     height: 80px;
     left: 30%;
-    top: 70%;    
+    top: 70%;
 }
-    
