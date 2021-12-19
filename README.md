@@ -8,6 +8,6 @@
 ## Contributors
 - Fadi
 - Saga
-- Connie
+- [Connie](https://github.com/s-Kone)
 - Hyung
 - [Tony Trinh](https://github.com/tonytrinh19)
