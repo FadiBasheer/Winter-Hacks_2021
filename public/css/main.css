@@ -91,6 +91,11 @@ canvas {
     text-transform: uppercase;
     width: 150px;
     height: 40px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .color-1 {
