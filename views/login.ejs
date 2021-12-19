@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/common.css">
+
     <style>
         body {
             /* background-image: url('Untitled.png') no-repeat center fixed;
@@ -100,24 +101,24 @@
 </head>
 
 <body>
-
-    <form action="/action_page.php" method="post">
+    <form id="form" action="/login" method="post">
         <div class="imgcontainer">
             <img src="fb-avatar.jpg" alt="Avatar" class="avatar">
         </div>
 
         <div class="container">
-            <input type="text" placeholder="Enter Username" name="uname" >
+            <input id="email" type="text" placeholder="Enter email" name="email" required>
 
             <input type="password" placeholder="Enter Password" name="psw" >
 
-            <button type="submit" , class="login">Login</button>
-            <button type="submit" , class="signUp">Sign Up</button>
+            <button>Login</button>
+            <button class="signUp" onclick="location.href='/register'">Sign Up</button>
         </div>
     </form>
 
     <%- include('partials/footer') -%>
 
 </body>
+
 
 </html>
