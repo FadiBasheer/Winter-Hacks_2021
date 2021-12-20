@@ -13,33 +13,28 @@
 <body>
     <nav>
         <ul>
-            <li id="account"><a href="login.html"><img alt="account" src="/account.gif" width="70" height="70"></a></li>
-            <li id="my_cards"><a href="login.html">My Cards</a></li>
-            <li id="logout"><a href="login.html">logout</a></li>
+            <li id="account"><a href="#"><img alt="account" src="/account.gif" width="70" height="70"></a></li>
+            <li id="my_cards"><a href="/catalog">More Cards</a></li>
+            <li id="logout"><a href="/logout">logout</a></li>
         </ul>
         <nav>
 
-            <div id="containter">
-                <div id="yellow_box">
-                    <div id="gray_box">
-                        <div><input type="file" id="fileInput"></div>
-                        <div id="plus_image">
-                            <img alt="plus" src="/plus.gif" width="70" height="70">
-                        </div>
-
-                        <div id="add_image">
-                            add image
-                        </div>
-                    </div>
-
-                    <div>
-                        <button id="submit_button">Button</button>
-
-                    </div>
+    <div id="containter">
+        <div id="pictures">
+            <form action="/upload" method="POST" enctype="multipart/form-data" id="yellow_box">
+                <div>
+                    <label for="image" id="add_image">click to add image</label>
+                    <input type="file" id="gray_box" name="card" accept="image/png, image/jpeg">
                 </div>
-            </div>
-            
-            <%- include('partials/footer') -%>
+                <div>
+                    <button type="submit" id="submit_button">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    
+    <%- include('partials/footer') -%>
 
 </body>
 

@@ -10,15 +10,14 @@
 </head>
 
 <body>
-    <h1>This is the catalog page</h1>
-    <div class="cardCont">
-        <div class="card">
-            <img src="/demoCard.png" alt="card1">
-            <div class="cardDesc">
-                <h4>Name: Christmas Tree</h4>
-                <p>Price: $2.00</p>
+    <div>
+        <% images.forEach(function(image) { %>
+        <div>
+            <div>
+                <img src="data:image/png; base64, <%=image.card.data.toString('base64')%>">
             </div>
         </div>
+        <% }) %>
     </div>
 
     <%- include('partials/footer') -%>
