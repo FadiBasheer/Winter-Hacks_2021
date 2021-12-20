@@ -30,11 +30,7 @@ const userSchema = mongoose.Schema({
                 throw new Error('Password cannot contain the word password!!')
             }
         }
-    },
-    cards: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Card"
-    }]
+    }
 }, {
     timestamps: true
 })
