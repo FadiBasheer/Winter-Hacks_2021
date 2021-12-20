@@ -18,7 +18,6 @@ const publicDirectory = path.join(__dirname, '/public')
 app.use(express.static(imagesDirectory))
 app.use(express.static(publicDirectory))
 
-
 var multer = require('multer');
 
 var storage = multer.diskStorage({
@@ -35,16 +34,12 @@ var upload = multer({
 });
 var imgModel = require('./models/card');
 
-
-
 // Parse URL-encoded bodies
 app.use(express.urlencoded());
 app.use(express.json())
 
 app.set('view engine', 'ejs')
 app.set('views', viewsPath)
-
-
 
 app.use(session({
     secret: 'extra text that no one will guess',
@@ -79,17 +74,12 @@ app.get('/catalog', auth, (req, res) => {
             res.render('catalog', {
                 images
             });
-
-            images.forEach((image) => {
-
-                console.log(image.createdAt);
-            })
         }
     });
 })
 
 // Register Page
-app.get('/register', auth, (req, res) => {
+app.get('/register', (req, res) => {
     res.render('register', {
 
     })
@@ -113,29 +103,17 @@ app.get('/login', (req, res) => {
 app.post('/login', async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.psw)
-        // res.send();
-        // authenticate the user, create a session
         req.session.loggedIn = true;
         req.session.email = req.body.email;
         req.session.save(function (err) {
             // session saved
             console.log("session saved");
         })
-        // this will only work with non-AJAX calls
-        //res.redirect("/profile");
-        // have to send a message to the browser and let front-end complete
-        // the action
-
-
-        // res.send({
-        //     status: "success",
-        //     msg: "Logged in."
-        // });
-
-        // res.send();
         res.redirect('/main');
     } catch (error) {
-        res.status(400).send();
+        res.status(400).render('error', {
+            error
+        });
     }
 })
 
@@ -168,8 +146,6 @@ app.get('/*', (req, res) => {
 
     })
 })
-
-
 
 // Create new user, save new user in database
 app.post('/users', async (req, res) => {
@@ -205,7 +181,5 @@ app.post('/upload', upload.single('card'), (req, res, next) => {
         }
     });
 });
-
-
 
 app.listen(port, () => console.log('Server is up on port ', port))
