@@ -24,23 +24,6 @@
 
     <div id="containter">
         <div id="pictures">
-
-            <!-- </div>
-                <div id="yellow_box">
-                    <div id="gray_box">
-                        <div><input type="file" id="fileInput"></div>
-                        <div id="plus_image">
-                            <img alt="plus" src="/plus.gif" width="70" height="70">
-                        </div>
-
-                        <div id="add_image">
-                            add image
-                        </div>
-                    </div>
-
-                    <div>
-                        <button id="submit_button" onclick="sendImage()">Submit</button>
-                    </div> -->
             <form action="/upload" method="POST" enctype="multipart/form-data" id="yellow_box">
                 <div>
                     <label for="image" id="add_image">click to add image</label>
@@ -53,6 +36,7 @@
 
         </div>
     </div>
+    
     <%- include('partials/footer') -%>
 
 </body>
