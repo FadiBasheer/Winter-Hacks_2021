@@ -1,7 +1,12 @@
 const express = require('express')
+const session = require('express-session')
 const app = express()
 const path = require('path')
 const User = require('./models/user.js')
+
+var fs = require('fs');
+var mongoose = require('mongoose')
+
 require('./db/mongoose.js')
 
 const port = process.env.PORT || 3000
@@ -30,7 +35,7 @@ var upload = multer({
 var imgModel = require('./models/card');
 
 // Parse URL-encoded bodies
-app.use(express.urlencoded()); 
+app.use(express.urlencoded());
 app.use(express.json())
 
 app.set('view engine', 'ejs')
@@ -53,7 +58,7 @@ const auth = async (req, res, next) => {
 }
 
 // Main Page
-app.get('/main', (req,res) => {
+app.get('/main', auth, (req, res) => {
     res.render('main', {
 
     })
@@ -81,22 +86,19 @@ app.get('/register', (req, res) => {
 })
 
 // Login Page
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
     res.render('login', {
 
     })
 })
 
 // Login Page
-app.get('/login', (req,res) => {
+app.get('/login', (req, res) => {
     res.render('login', {
 
     })
 })
 
-// Upload Page
-app.get('/upload', (req,res) => {
-    res.render('upload', {
 
 app.post('/login', async (req, res) => {
     try {
@@ -109,7 +111,7 @@ app.post('/login', async (req, res) => {
         })
         res.redirect('/main');
     } catch (error) {
-        res.status(400).render('error', {
+        res.status(400).render('login', {
             error
         });
     }
@@ -124,8 +126,22 @@ app.get('/logout', function (req, res) {
     res.redirect("/login");
 })
 
+// Upload Page
+app.get('/upload', auth, (req, res) => {
+    imgModel.find({}, (err, items) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send('An error occurred', err);
+        } else {
+            res.render('upload', {
+                items: items
+            });
+        }
+    });
+});
+
 // 404 Page
-app.get('/*', (req,res) => {
+app.get('/*', (req, res) => {
     res.render('error', {
 
     })
@@ -133,10 +149,12 @@ app.get('/*', (req,res) => {
 
 // Create new user, save new user in database
 app.post('/users', async (req, res) => {
+    console.log(req.body);
     const user = new User(req.body)
-
     try {
+        console.log('before')
         await user.save()
+        console.log('after')
         res.status(201).send({
             user
         })
@@ -147,7 +165,6 @@ app.post('/users', async (req, res) => {
 
 // save new card in database
 app.post('/upload', upload.single('card'), (req, res, next) => {
-    console.log(req);
     var obj = {
         card: {
             data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
