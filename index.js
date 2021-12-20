@@ -152,9 +152,7 @@ app.post('/users', async (req, res) => {
     console.log(req.body);
     const user = new User(req.body)
     try {
-        console.log('before')
         await user.save()
-        console.log('after')
         res.status(201).send({
             user
         })
